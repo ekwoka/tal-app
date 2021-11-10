@@ -12,7 +12,7 @@
     "ncp": "^2.0.0"
   },
   "bin": {
-    "tal-app": "bin/index.js"
+    "tal-app": "bin/index.mjs"
   },
   "keywords": [],
   "author": "",
