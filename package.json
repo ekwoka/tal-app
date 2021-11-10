@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish"
+  },
   "dependencies": {
     "command-line-args": "^5.2.0",
     "ncp": "^2.0.0"
   },
   "bin": {
-    "tal-app": "./bin/index"
+    "tal-app": "bin/index.js"
   },
   "keywords": [],
   "author": "",
