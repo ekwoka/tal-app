@@ -1,0 +1,16 @@
+{
+  "name": "@ekwoka/tal-app",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "command-line-args": "^5.2.0",
+    "ncp": "^2.0.0"
+  },
+  "bin": {
+    "tal-app": "./bin/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
