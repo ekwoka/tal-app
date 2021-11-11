@@ -20,7 +20,7 @@
     "tailwindcss": "^2.2.19"
   },
   "dependencies": {
-    "alpinejs": "^3.5.0"
+    "alpinejs": "^3.5.1"
   },
   "version": "0.0.1"
 }
