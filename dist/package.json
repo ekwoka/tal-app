@@ -2,25 +2,27 @@
   "scripts": {
     "build": "run-s build:*",
     "watch": "run-p watch:*",
-    "build:liquid": "node build/liquid.js",
-    "build:js": "esbuild ./build/in.js --outfile=./src/assets/build.min.js --platform=browser --target=es2017 --bundle --minify --define:ALPINE_VERSION='\"CUSTOM\"'  --define:DEBUG_ON='false'",
-    "build:css": "tailwindcss -i ./build/styles.pre.css -o ./src/assets/styles.min.css --jit -m --config tailwind.config.js",
-    "watch:liquid": "nodemon --watch build/liquid -e liquid,js build/liquid.js",
-    "watch:js": "esbuild ./build/in.js --platform=browser --target=es2017 --outfile=./src/assets/build.min.js --bundle --watch --define:ALPINE_VERSION='\"CUSTOM\"' --define:DEBUG_ON='true'",
-    "watch:css": "tailwindcss -i ./build/styles.pre.css -o ./src/assets/styles.min.css --jit -w --config tailwind.config.js",
+    "build:liquid": "node src/liquid.js",
+    "build:js": "esbuild ./src/in.js --outfile=./dist/assets/build.min.js --platform=browser --target=es2017 --bundle --minify --define:ALPINE_VERSION='\"CUSTOM\"'  --define:DEBUG_ON='false'",
+    "build:css": "tailwindcss -i ./src/styles.pre.css -o ./dist/assets/styles.min.css --jit -m --config tailwind.config.js",
+    "watch:liquid": "nodemon --watch src/liquid -e liquid,js src/liquid.js",
+    "watch:js": "esbuild ./src/in.js --platform=browser --target=es2017 --outfile=./dist/assets/build.min.js --bundle --watch --define:ALPINE_VERSION='\"CUSTOM\"' --define:DEBUG_ON='true'",
+    "watch:css": "tailwindcss -i ./src/styles.pre.css -o ./dist/assets/styles.min.css --jit -w --config tailwind.config.js",
     "update": "ncu -u && rm -rf node_modules && npm i && npm run build && git add . && git commit -m ':arrow_up:' && npm version patch"
   },
   "devDependencies": {
-    "@tailwindcss/line-clamp": "^0.2.2",
-    "@tailwindcss/typography": "^0.4.1",
-    "esbuild": "^0.13.13",
-    "liquidjs": "^9.28.5",
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "@tailwindcss/typography": "^0.5.2",
+    "autoprefixer": "^10.4.4",
+    "esbuild": "^0.14.27",
+    "liquidjs": "^9.36.0",
     "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
-    "tailwindcss": "^2.2.19"
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.23"
   },
   "dependencies": {
-    "alpinejs": "^3.5.1"
+    "alpinejs": "^3.9.1"
   },
   "version": "0.0.1"
 }
